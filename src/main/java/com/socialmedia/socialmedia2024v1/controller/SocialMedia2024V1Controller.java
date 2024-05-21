@@ -1,6 +1,8 @@
 package com.socialmedia.socialmedia2024v1.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,15 +24,15 @@ public class SocialMedia2024V1Controller {
 	
 	@GetMapping("/test")
 	public String testEndPoint() {
-		return "Hello";
+		return "Hello Sadia";
 	}
 	
 	@PostMapping("/createUserAccount")
-	public String createUserAccount(@RequestBody AddUserEntityDTO addUserEntityDTO) {
+	public ResponseEntity<String> createUserAccount(@RequestBody AddUserEntityDTO addUserEntityDTO) {
 		
 		userAccountService.createAccount(addUserEntityDTO);
 		
-		return addUserEntityDTO.toString();
+		return new ResponseEntity<>(HttpStatus.CREATED);
 	}
 	
 }
