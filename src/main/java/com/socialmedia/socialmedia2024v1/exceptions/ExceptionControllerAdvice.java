@@ -13,13 +13,11 @@ import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller;
-
 @RestControllerAdvice
 public class ExceptionControllerAdvice {
 	
 	@Autowired
-	private static final Logger logger = LoggerFactory.getLogger(ExceptionControllerAdvice.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(ExceptionControllerAdvice.class);
 	
 	@Autowired
 	Environment environment;
@@ -31,17 +29,17 @@ public class ExceptionControllerAdvice {
 		error.setErrorMessage(errorMsg);
 		error.setErrorCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 		error.setTimestampInfo(LocalDateTime.now());
-		logger.debug(error.toString());
+		LOGGER.debug(error.toString());
 		return new ResponseEntity<ErrorInfo>(error, HttpStatus.INTERNAL_SERVER_ERROR);	
 	}
 	
-	@ExceptionHandler(ResourcesExceptionHandler.class)
-	public ResponseEntity<ErrorInfo> resourceNotFoundExceptionHandler(ResourcesExceptionHandler resourcesExceptionHandler){
+	@ExceptionHandler(ResourcesNotFoundExceptionHandler.class)
+	public ResponseEntity<ErrorInfo> resourceNotFoundExceptionHandler(ResourcesNotFoundExceptionHandler resourcesNotFoundExceptionHandler){
 		ErrorInfo error = new ErrorInfo();
-		error.setErrorMessage(resourcesExceptionHandler.getMessage());
+		error.setErrorMessage(resourcesNotFoundExceptionHandler.getMessage());
 		error.setErrorCode(HttpStatus.NOT_FOUND.value());
 		error.setTimestampInfo(LocalDateTime.now());
-		logger.debug(error.toString());
+		LOGGER.debug(error.toString());
 		return new ResponseEntity<ErrorInfo>(error, HttpStatus.NOT_FOUND);	
 	}
 	
@@ -53,7 +51,7 @@ public class ExceptionControllerAdvice {
 		error.setErrorMessage(errorMsg);
 		error.setErrorCode(HttpStatus.BAD_REQUEST.value());
 		error.setTimestampInfo(LocalDateTime.now());
-		logger.debug(error.toString());
+		LOGGER.debug(error.toString());
 		return new ResponseEntity<ErrorInfo>(error, HttpStatus.BAD_REQUEST);	
 	}
 }

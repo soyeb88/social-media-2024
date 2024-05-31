@@ -1,9 +1,8 @@
 package com.socialmedia.socialmedia2024v1.dto;
 
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
-import jakarta.validation.constraints.Max;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,7 +10,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class AddUserEntityDTO {
+public class LogInUserEntityDTO {
 	@NotEmpty
 	@Size(min=5, max=20)
 	@Pattern(regexp="[A-Za-z]+[0-9]+")
@@ -19,9 +18,4 @@ public class AddUserEntityDTO {
 	
 	@NotEmpty
 	private String password;
-	
-	@NotEmpty
-	@Pattern(regexp="[A-Za-z]+( [A-Za-z]+)*")
-	@Size(max=50)
-	private String name;
 }
