@@ -6,9 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.socialmedia.socialmedia2024v1.dto.AddUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.LogInUserEntityDTO;
+import com.socialmedia.socialmedia2024v1.dto.PasswordUpdateDTO;
 import com.socialmedia.socialmedia2024v1.dto.UserDetailsDTO;
 import com.socialmedia.socialmedia2024v1.exceptions.ResourcesNotFoundExceptionHandler;
 import com.socialmedia.socialmedia2024v1.service.UserAccountService;
@@ -83,6 +86,24 @@ public class SocialMedia2024V1Controller {
 		String json = ow.writeValueAsString(userAccountService.getUserDetails(id));
 		
 		//userAccountService.getUserDetails(id);
+		return ResponseEntity.status(HttpStatus.OK).body(json);
+	}
+	
+	@PutMapping("/user/update")
+	public ResponseEntity<String> updateUserPasswordByUserId(@Valid @RequestBody PasswordUpdateDTO passwordUpdateDTO)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
+		
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		//String json = ow.writeValueAsString(userAccountService.getUserDetails(id));
+		String json = ow.writeValueAsString(passwordUpdateDTO);
+		return ResponseEntity.status(HttpStatus.OK).body(json);
+	}
+	
+	@DeleteMapping("/user/{id}")
+	public ResponseEntity<String> deleteUserAccountByUserId(@PathVariable String id)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
+		
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		//String json = ow.writeValueAsString(userAccountService.getUserDetails(id));
+		String json = ow.writeValueAsString(id);
 		return ResponseEntity.status(HttpStatus.OK).body(json);
 	}
 	
