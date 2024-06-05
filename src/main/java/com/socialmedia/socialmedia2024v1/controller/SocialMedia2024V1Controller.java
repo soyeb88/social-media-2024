@@ -19,7 +19,9 @@ import jakarta.validation.Valid;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
+import com.socialmedia.socialmedia2024v1.dto.AddFacebookUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.AddUserEntityDTO;
+import com.socialmedia.socialmedia2024v1.dto.LogInFacebookAccountDTO;
 import com.socialmedia.socialmedia2024v1.dto.LogInUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.PasswordUpdateDTO;
 import com.socialmedia.socialmedia2024v1.dto.UserDetailsDTO;
@@ -70,6 +72,18 @@ public class SocialMedia2024V1Controller {
 		return ResponseEntity.status(HttpStatus.CREATED).body(json);
 	}
 	
+	@PostMapping("/user/facebook")
+	public ResponseEntity<Object> createFacebookUserAccount(@Valid @RequestBody AddFacebookUserEntityDTO addFacebookUserEntityDTO) throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
+		LOGGER.debug("Enter createFacebookUserAccount method from SocialMedia2024V1Controller class... ");
+		
+		LOGGER.debug("Invoking userAccountService method from createUserAccount in SocialMedia2024V1Controller class.");
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		String json = ow.writeValueAsString(userAccountService.createFacebookUserDetails(addFacebookUserEntityDTO));
+		
+		LOGGER.debug("Exit createFacebookUserAccount method from SocialMedia2024V1Controller class and return... ");
+		return ResponseEntity.status(HttpStatus.CREATED).body(json);
+	}
+	
 	@PostMapping("/user/login")
 	public ResponseEntity<String> getUserAccount(@Valid @RequestBody LogInUserEntityDTO logInUserEntityDTO)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
 		
@@ -79,11 +93,31 @@ public class SocialMedia2024V1Controller {
 		return ResponseEntity.status(HttpStatus.OK).body(json);
 	}
 	
+	@PostMapping("/user/facebook/login")
+	public ResponseEntity<String> logInFacebookAccount(@Valid @RequestBody LogInFacebookAccountDTO logInFacebookAccountDTO)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
+		
+		System.out.println(logInFacebookAccountDTO.toString());
+		
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		String json = ow.writeValueAsString(userAccountService.loginFacebookAccount(logInFacebookAccountDTO));	
+		return ResponseEntity.status(HttpStatus.OK).body(json);
+	}
+	
 	@GetMapping("/user/{id}")
 	public ResponseEntity<String> getUserDetailsByUserId(@PathVariable String id)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
 		
 		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
 		String json = ow.writeValueAsString(userAccountService.getUserDetails(id));
+		
+		//userAccountService.getUserDetails(id);
+		return ResponseEntity.status(HttpStatus.OK).body(json);
+	}
+	
+	@GetMapping("/user/facebook/profile/{id}")
+	public ResponseEntity<String> getFacebookProfileByUserId(@PathVariable String id)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
+		
+		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
+		String json = ow.writeValueAsString(userAccountService.facebookProfile(id));
 		
 		//userAccountService.getUserDetails(id);
 		return ResponseEntity.status(HttpStatus.OK).body(json);
