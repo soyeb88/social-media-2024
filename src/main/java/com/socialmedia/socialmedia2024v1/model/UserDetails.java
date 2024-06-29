@@ -1,5 +1,12 @@
 package com.socialmedia.socialmedia2024v1.model;
 
+import java.time.LocalDate;
+import java.util.Date;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -16,26 +23,35 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "user_details")
 public class UserDetails {
+	
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)	
 	private long id;
-	@Column(name="user_id")
+	
+	@Column(name="user_id", nullable = false,  unique = true)	
 	private String userId;
-	@Column(name="firstname")
+	
+	@Column(name="password", nullable = false)
+	private String password;
+	
+	
+	@Column(name="email", unique = true)
+	private String email;
+	
+	@Column(name="phone", unique = true)
+	private String phone;
+	
+	@Column(name="firstname", nullable = false)
 	private String firstName;
+	
 	@Column(name="lastname")
 	private String lastName;
-	@Column(name="email")
-	private String email;
-	@Column(name="password")
-	private String password;
-	@Column(name="month")
-	private String month;
-	@Column(name="day")
-	private String day;
-	@Column(name="year")
-	private String year;
-	@Column(name="gender")
-	private String gender;
+
+	@Column(name="gender", nullable = false)
+	private Character gender;
+	
+	@JsonFormat(pattern="yyyy-MM-dd")
+	@Column(name="dob", nullable = false)
+	private LocalDate dob;
 
 }
