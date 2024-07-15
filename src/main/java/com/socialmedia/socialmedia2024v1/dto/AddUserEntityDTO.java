@@ -3,7 +3,6 @@ package com.socialmedia.socialmedia2024v1.dto;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
-import jakarta.validation.constraints.Max;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;

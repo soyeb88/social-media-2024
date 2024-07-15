@@ -21,6 +21,10 @@ public class Util {
 	
 	public static String getUserId(AddFacebookUserEntityDTO addFacebookUserEntityDTO){
 		
+		if(addFacebookUserEntityDTO.getEmail() == null) {
+			return null;
+		}
+		
 		String[] splitWord = addFacebookUserEntityDTO.getEmail().split("@");
 		String userId = splitWord[0];
 		return userId;

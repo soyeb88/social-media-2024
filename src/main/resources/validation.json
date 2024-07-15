@@ -1,0 +1,29 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+       "title": "Add Facebook User Account",
+       "description": "Create User Acoount after Sign Up from User Request",
+       "additionalProperties": false,
+       "type": "object",
+       "required": ["password", "email", "phone", "firstName", "lastName", "gender" ],
+       "properties": {
+          "password": {
+             "type": "string"
+           },
+           "email": {
+             "type": "string"
+           },
+           "phone": { 
+            "type": "number"
+          },
+          "firstName": {
+            "type": "string"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "gender": {
+            "enum": ["m", "f"],
+            "type": "string"       
+          }
+      }
+   }

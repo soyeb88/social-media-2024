@@ -48,10 +48,10 @@ public class UserDetails {
 	private String lastName;
 
 	@Column(name="gender", nullable = false)
-	private Character gender;
+	private String gender;
 	
 	@JsonFormat(pattern="yyyy-MM-dd")
-	@Column(name="dob", nullable = false)
+	@Column(name="dob", nullable = true)
 	private LocalDate dob;
 
 }

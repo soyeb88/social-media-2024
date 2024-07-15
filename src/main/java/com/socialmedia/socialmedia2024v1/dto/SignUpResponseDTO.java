@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class UserIdDTO {
-	private String userId;
+public class SignUpResponseDTO {
+	private String responseMessage;
+	private Integer statusCode;
+	private String userId;	
 }

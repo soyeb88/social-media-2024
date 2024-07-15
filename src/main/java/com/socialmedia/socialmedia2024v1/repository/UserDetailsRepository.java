@@ -16,7 +16,12 @@ public interface UserDetailsRepository extends JpaRepository<UserDetails,Long>{
 	
 	@Query(value = SQL.LOG_IN_FACEBOOK,  nativeQuery = true)
 	String findUserIdByEmailAndPassword(String email, String password);
-
-	@Query(value = "select firstname, lastname from socialmedia.user_details where user_id = :id",  nativeQuery = true)
-	List<Object[]> findNameByUserId(String id);
+	
+	
+	@Query(value = SQL.EXISTS_EMAIL_OR_PHONE_FACEBOOK,  nativeQuery = true)
+	String findUserIdByEmailOrPhone(String email, String phone);
+	
+	
+	@Query(value = "select firstname, lastname from socialmedia.user_details where user_id = :userId",  nativeQuery = true)
+	List<Object[]> findNameByUserId(String userId);
 }

@@ -65,6 +65,15 @@
 			<version>3.0.5</version>
 		</dependency>
 
+		<!--
+		https://mvnrepository.com/artifact/com.networknt/json-schema-validator -->
+		<dependency>
+			<groupId>com.networknt</groupId>
+			<artifactId>json-schema-validator</artifactId>
+			<version>1.4.3</version>
+		</dependency>
+
+
 	</dependencies>
 
 	<build>
@@ -81,13 +90,13 @@
 					</excludes>
 				</configuration>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>com.github.ulisesbocchio</groupId>
 				<artifactId>jasypt-maven-plugin</artifactId>
 				<version>3.0.5</version>
 			</plugin>
-			
+
 		</plugins>
 	</build>
 	<repositories>

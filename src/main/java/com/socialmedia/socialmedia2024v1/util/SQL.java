@@ -9,4 +9,7 @@ public class SQL {
 	
 	public static final String LOG_IN_FACEBOOK = "select user_id from socialmedia.user_details "
 			+ "where email = :email and password = :password";
+	
+	public static final String EXISTS_EMAIL_OR_PHONE_FACEBOOK = "select user_id from socialmedia.user_details "
+			+ "where email = :email or phone = :phone";
 }
