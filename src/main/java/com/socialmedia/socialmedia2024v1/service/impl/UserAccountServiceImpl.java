@@ -17,6 +17,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.socialmedia.socialmedia2024v1.service.UserAccountService;
 import com.socialmedia.socialmedia2024v1.config.JasyptEncryptorConfig;
@@ -25,8 +26,8 @@ import com.socialmedia.socialmedia2024v1.dto.AddFacebookUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.FacebookProfileDTO;
 import com.socialmedia.socialmedia2024v1.dto.LogInFacebookAccountDTO;
 import com.socialmedia.socialmedia2024v1.dto.LogInUserEntityDTO;
-import com.socialmedia.socialmedia2024v1.dto.UserDetailsDTO;
-import com.socialmedia.socialmedia2024v1.dto.SignUpResponseDTO;
+import com.socialmedia.socialmedia2024v1.dto.PasswordUpdateDTO;
+import com.socialmedia.socialmedia2024v1.dto.ResponseDTO;
 import com.socialmedia.socialmedia2024v1.util.Util;
 
 /**
@@ -36,6 +37,7 @@ import com.socialmedia.socialmedia2024v1.util.Util;
  **/
 
 @Service("userService")
+@Transactional
 public class UserAccountServiceImpl implements UserAccountService {
 	@Autowired
 	private static final Logger LOGGER = LoggerFactory.getLogger(SocialMedia2024V1Controller.class);
@@ -49,11 +51,20 @@ public class UserAccountServiceImpl implements UserAccountService {
 	@Autowired
 	private JasyptEncryptorConfig jasyptEncryptorConfig;
 
-	public Object createFacebookUserDetails(@Valid AddFacebookUserEntityDTO addFacebookUserEntityDTO)
+	public ResponseDTO createFacebookUserDetails(@Valid AddFacebookUserEntityDTO addFacebookUserEntityDTO)
 			throws ParseException {
 		LOGGER.debug("Enter createFacebookUserDetails method on UserAccountService class... ");
 		
-		SignUpResponseDTO signUpResponseDTO = new SignUpResponseDTO();
+		
+		ResponseDTO signUpResponseDTO = new ResponseDTO();
+		
+		if(addFacebookUserEntityDTO.getEmail() == null && addFacebookUserEntityDTO.getPhone() == null) {
+			System.out.println("Worked");
+			signUpResponseDTO.setResponseMessage("Both Email and Phone number could not be null value!");
+			signUpResponseDTO.setStatusCode(400);
+			signUpResponseDTO.setUserId(null);
+			return signUpResponseDTO;
+		}
 		
 		signUpResponseDTO.setUserId(userDetailsRepository.findUserIdByEmailOrPhone(addFacebookUserEntityDTO.getEmail(), 
 				addFacebookUserEntityDTO.getPhone())); 
@@ -118,32 +129,28 @@ public class UserAccountServiceImpl implements UserAccountService {
 		}
 		return userId;
 	}
-
-	public SignUpResponseDTO loginAccount(LogInUserEntityDTO logInUserEntityDTO) {
-		System.out.println(logInUserEntityDTO.toString());
-
-		SignUpResponseDTO userIdDTO = new SignUpResponseDTO();
-		userIdDTO.setUserId(accountRepository.findUserIdByUserIdAndPassword(logInUserEntityDTO.getUserId(),
-				logInUserEntityDTO.getPassword()));
-		return userIdDTO;
-	}
-
-	public SignUpResponseDTO loginFacebookAccount(@Valid LogInFacebookAccountDTO logInFacebookAccountDTO) {
+	
+	
+	public ResponseDTO loginFacebookAccount(@Valid LogInFacebookAccountDTO logInFacebookAccountDTO) {
 		System.out.println(logInFacebookAccountDTO.toString());
 
-		SignUpResponseDTO userIdDTO = new SignUpResponseDTO();
-		userIdDTO.setUserId(userDetailsRepository.findUserIdByEmailAndPassword(logInFacebookAccountDTO.getEmail(),
-				logInFacebookAccountDTO.getPassword()));
-		return userIdDTO;
-	}
-
-	public UserDetailsDTO getUserDetails(String id) {
-
-		UserDetailsDTO userDetailsDTO = new UserDetailsDTO();
-		userDetailsDTO.setName(accountRepository.findNameByUserId(id));
-
-		return userDetailsDTO;
-
+		ResponseDTO logInResponseDTO = new ResponseDTO();
+		
+		logInResponseDTO.setUserId(userDetailsRepository.findUserIdByEmailOrPhoneAndPassword(logInFacebookAccountDTO.getEmail(),
+				logInFacebookAccountDTO.getPhone(), logInFacebookAccountDTO.getPassword()));
+		//System.out.println(userIdDTO.toString());
+		
+		if(logInResponseDTO.getUserId() == null) {
+			//System.out.println("Worked");
+			logInResponseDTO.setResponseMessage("Your Email or Phone number not found in our databas");
+			logInResponseDTO.setStatusCode(404);
+			return logInResponseDTO;
+		}
+		
+		logInResponseDTO.setResponseMessage("User Account Log In Successfully!");
+		logInResponseDTO.setStatusCode(200);
+		
+		return logInResponseDTO;
 	}
 
 	public FacebookProfileDTO facebookProfile(String userId) {
@@ -163,5 +170,61 @@ public class UserAccountServiceImpl implements UserAccountService {
 		facebookProfileDTO.setLastName(lastName);
 		return facebookProfileDTO;
 	}
+
+	public ResponseDTO updateUserPassword(@Valid PasswordUpdateDTO passwordUpdateDTO) {
+		
+		System.out.println(passwordUpdateDTO.toString());
+
+		ResponseDTO updatePasswordResponseDTO = new ResponseDTO();
+		
+		Integer updatedRow = 0;
+		
+		updatedRow = userDetailsRepository.updatePassword(passwordUpdateDTO.getOldPassword(), passwordUpdateDTO.getNewPassword()
+				, passwordUpdateDTO.getUserId());
+		
+		if(updatedRow == 0) {
+			
+			updatePasswordResponseDTO.setResponseMessage("Password doesn't Update Successfully on User Id " + 
+					passwordUpdateDTO.getUserId());
+			updatePasswordResponseDTO.setStatusCode(404);
+			updatePasswordResponseDTO.setUserId(passwordUpdateDTO.getUserId());
+			return updatePasswordResponseDTO;
+		}
+
+		
+		updatePasswordResponseDTO.setResponseMessage("Password Update Successfully on User Id " + 
+				passwordUpdateDTO.getUserId());
+		updatePasswordResponseDTO.setStatusCode(200);
+		updatePasswordResponseDTO.setUserId(passwordUpdateDTO.getUserId());
+		
+		return updatePasswordResponseDTO;
+	}
+
+	public ResponseDTO deleteUserAccount(String userId) {
+		
+		ResponseDTO deleteAccountResponseDTO = new ResponseDTO();
+		
+		Integer deletedRow = 0;
+		
+		deletedRow = userDetailsRepository.deleteByUserId(userId);
+		
+		if(deletedRow == 0) {
+			
+			deleteAccountResponseDTO.setResponseMessage("Account doesn't delete Successfully on User Id " + 
+					userId);
+			deleteAccountResponseDTO.setStatusCode(404);
+			deleteAccountResponseDTO.setUserId(userId);
+			return deleteAccountResponseDTO;
+		}
+		
+		deleteAccountResponseDTO.setResponseMessage("Account delete Successfully on User Id " + 
+				userId);
+		deleteAccountResponseDTO.setStatusCode(200);
+		deleteAccountResponseDTO.setUserId(userId);
+		
+		return deleteAccountResponseDTO;
+	}
+	
+	
 
 }

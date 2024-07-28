@@ -28,8 +28,7 @@ import com.socialmedia.socialmedia2024v1.dto.AddUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.LogInFacebookAccountDTO;
 import com.socialmedia.socialmedia2024v1.dto.LogInUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.PasswordUpdateDTO;
-import com.socialmedia.socialmedia2024v1.dto.SignUpResponseDTO;
-import com.socialmedia.socialmedia2024v1.dto.UserDetailsDTO;
+import com.socialmedia.socialmedia2024v1.dto.ResponseDTO;
 import com.socialmedia.socialmedia2024v1.exceptions.ResourcesNotFoundExceptionHandler;
 import com.socialmedia.socialmedia2024v1.service.UserAccountService;
 import com.socialmedia.socialmedia2024v1.service.impl.UserAccountServiceImpl;
@@ -80,16 +79,19 @@ public class SocialMedia2024V1Controller {
 		//System.out.println(new JsonSchemaCofig().jsonSchema(addFacebookUserEntityDTO));
 		
 		System.out.println(addFacebookUserEntityDTO);
-		SignUpResponseDTO signUpResponseDTO = new SignUpResponseDTO();
-		signUpResponseDTO =  (SignUpResponseDTO) userAccountService.createFacebookUserDetails(addFacebookUserEntityDTO);
+		ResponseDTO signUpResponseDTO = new ResponseDTO();
+		signUpResponseDTO = userAccountService.createFacebookUserDetails(addFacebookUserEntityDTO);
 		
-		//System.out.println(signUpResponseDTO);
+		System.out.println(signUpResponseDTO);
 		
 		LOGGER.debug("Invoking userAccountService method from createUserAccount in SocialMedia2024V1Controller class.");
 		
 		
 		LOGGER.debug("Exit createFacebookUserAccount method from SocialMedia2024V1Controller class and return... ");
-		if(signUpResponseDTO.getStatusCode() == 409) {
+		if(signUpResponseDTO.getStatusCode() == 400) {
+			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Util.ObjectWriterMapping(signUpResponseDTO));
+		}
+		else if(signUpResponseDTO.getStatusCode() == 409) {
 			System.out.println("Existed");
 			return ResponseEntity.status(HttpStatus.CONFLICT).body(Util.ObjectWriterMapping(signUpResponseDTO));
 		}
@@ -103,39 +105,53 @@ public class SocialMedia2024V1Controller {
 		
 		System.out.println(logInFacebookAccountDTO.toString());
 		
-		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-		String json = ow.writeValueAsString(userAccountService.loginFacebookAccount(logInFacebookAccountDTO));	
-		return ResponseEntity.status(HttpStatus.OK).body(json);
+		ResponseDTO logInResponseDTO = new ResponseDTO();
+		
+		logInResponseDTO = userAccountService.loginFacebookAccount(logInFacebookAccountDTO);
+		
+		System.out.println(logInResponseDTO.toString());
+
+		if(logInResponseDTO.getStatusCode() == 404) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Util.ObjectWriterMapping(logInResponseDTO));
+		}
+		
+		return ResponseEntity.status(HttpStatus.OK).body(Util.ObjectWriterMapping(logInResponseDTO));
 	}
 	
 	
 	@GetMapping("/facebook/profile/{id}")
 	public ResponseEntity<String> getFacebookProfileByUserId(@PathVariable String id)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
-		
-		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-		String json = ow.writeValueAsString(userAccountService.facebookProfile(id));
-		
-		userAccountService.getUserDetails(id);
-		return ResponseEntity.status(HttpStatus.OK).body(json);
+
+		return ResponseEntity.status(HttpStatus.OK).body(Util.ObjectWriterMapping(userAccountService.facebookProfile(id)));
 	}
 	
-	/*
-	@PutMapping("/user/update")
+	
+	@PutMapping("/facebook/update")
 	public ResponseEntity<String> updateUserPasswordByUserId(@Valid @RequestBody PasswordUpdateDTO passwordUpdateDTO)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
+
+		ResponseDTO updatePasswordResponseDTO = new ResponseDTO();
 		
-		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-		//String json = ow.writeValueAsString(userAccountService.getUserDetails(id));
-		String json = ow.writeValueAsString(passwordUpdateDTO);
-		return ResponseEntity.status(HttpStatus.OK).body(json);
+		updatePasswordResponseDTO = userAccountService.updateUserPassword(passwordUpdateDTO);
+		
+		if(updatePasswordResponseDTO.getStatusCode() == 404) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Util.ObjectWriterMapping(updatePasswordResponseDTO));
+		}
+		
+		return ResponseEntity.status(HttpStatus.OK).body(Util.ObjectWriterMapping(updatePasswordResponseDTO));
 	}
 	
-	@DeleteMapping("/user/{id}")
-	public ResponseEntity<String> deleteUserAccountByUserId(@PathVariable String id)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
+	@DeleteMapping("/facebook/{userId}")
+	public ResponseEntity<String> deleteUserAccountByUserId(@PathVariable String userId)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
 		
-		ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-		//String json = ow.writeValueAsString(userAccountService.getUserDetails(id));
-		String json = ow.writeValueAsString(id);
-		return ResponseEntity.status(HttpStatus.OK).body(json);
+		ResponseDTO deleteAccountResponseDTO = new ResponseDTO();
+		
+		deleteAccountResponseDTO = userAccountService.deleteUserAccount(userId);
+
+		if(deleteAccountResponseDTO.getStatusCode() == 404) {
+			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Util.ObjectWriterMapping(deleteAccountResponseDTO));
+		}
+		
+		return ResponseEntity.status(HttpStatus.OK).body(Util.ObjectWriterMapping(deleteAccountResponseDTO));
 	}
-	*/
+	
 }

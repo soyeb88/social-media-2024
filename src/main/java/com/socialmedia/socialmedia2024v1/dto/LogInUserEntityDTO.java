@@ -11,11 +11,11 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class LogInUserEntityDTO {
-	@NotEmpty
-	@Size(min=5, max=20)
-	@Pattern(regexp="[A-Za-z]+[0-9]+")
-	private String userId;
-	
-	@NotEmpty
+	//@NotEmpty
+	//@Size(min=5, max=20)
+	//@Pattern(regexp="[A-Za-z]+[0-9]+")
+	private String email;
+	private String phone;
+	//@NotEmpty
 	private String password;
 }
