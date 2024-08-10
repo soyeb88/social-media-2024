@@ -37,4 +37,5 @@ public interface UserDetailsRepository extends JpaRepository<UserDetails,Long>{
 	@Modifying
 	@Query(value = SQL.DELETE_PASSWORD,  nativeQuery = true)
 	Integer deleteByUserId(String userId);
+
 }

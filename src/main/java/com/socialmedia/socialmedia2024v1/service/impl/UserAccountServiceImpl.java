@@ -1,15 +1,10 @@
 package com.socialmedia.socialmedia2024v1.service.impl;
 
 import com.socialmedia.socialmedia2024v1.model.UserDetails;
-import com.socialmedia.socialmedia2024v1.repository.AccountRepository;
 import com.socialmedia.socialmedia2024v1.repository.UserDetailsRepository;
 
 import jakarta.validation.Valid;
 
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.List;
 
@@ -25,7 +20,6 @@ import com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller;
 import com.socialmedia.socialmedia2024v1.dto.AddFacebookUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.FacebookProfileDTO;
 import com.socialmedia.socialmedia2024v1.dto.LogInFacebookAccountDTO;
-import com.socialmedia.socialmedia2024v1.dto.LogInUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.PasswordUpdateDTO;
 import com.socialmedia.socialmedia2024v1.dto.ResponseDTO;
 import com.socialmedia.socialmedia2024v1.util.Util;
@@ -43,9 +37,6 @@ public class UserAccountServiceImpl implements UserAccountService {
 	private static final Logger LOGGER = LoggerFactory.getLogger(SocialMedia2024V1Controller.class);
 
 	@Autowired
-	private AccountRepository accountRepository;
-
-	@Autowired
 	private UserDetailsRepository userDetailsRepository;
 
 	@Autowired
@@ -53,13 +44,12 @@ public class UserAccountServiceImpl implements UserAccountService {
 
 	public ResponseDTO createFacebookUserDetails(@Valid AddFacebookUserEntityDTO addFacebookUserEntityDTO)
 			throws ParseException {
-		LOGGER.debug("Enter createFacebookUserDetails method on UserAccountService class... ");
+		LOGGER.debug("Enter createFacebookUserDetails method on UserAccountServiceImpl class... ");
 		
 		
 		ResponseDTO signUpResponseDTO = new ResponseDTO();
 		
 		if(addFacebookUserEntityDTO.getEmail() == null && addFacebookUserEntityDTO.getPhone() == null) {
-			System.out.println("Worked");
 			signUpResponseDTO.setResponseMessage("Both Email and Phone number could not be null value!");
 			signUpResponseDTO.setStatusCode(400);
 			signUpResponseDTO.setUserId(null);
@@ -71,7 +61,6 @@ public class UserAccountServiceImpl implements UserAccountService {
 
 		
 		if(signUpResponseDTO.getUserId() != null) {
-			//System.out.println("Worked");
 			signUpResponseDTO.setResponseMessage("Your Account is already exists");
 			signUpResponseDTO.setStatusCode(409);
 			return signUpResponseDTO;
@@ -103,9 +92,10 @@ public class UserAccountServiceImpl implements UserAccountService {
 		LOGGER.debug("Invoking userDetailsRepository method to find userId...");
 		signUpResponseDTO.setResponseMessage("User Account Created Successfully!");
 		signUpResponseDTO.setStatusCode(201);
-		signUpResponseDTO.setUserId(userDetailsRepository.findByUserId(userId));
+		//signUpResponseDTO.setUserId(userDetailsRepository.findByUserId(userId));
+		signUpResponseDTO.setUserId(userId);
 
-		LOGGER.debug("Exit createFacebookUserDetails method on UserAccountService class... ");
+		LOGGER.debug("Exit createFacebookUserDetails method on UserAccountServiceImpl class... ");
 		return signUpResponseDTO;
 	}
 
@@ -132,18 +122,26 @@ public class UserAccountServiceImpl implements UserAccountService {
 	
 	
 	public ResponseDTO loginFacebookAccount(@Valid LogInFacebookAccountDTO logInFacebookAccountDTO) {
-		System.out.println(logInFacebookAccountDTO.toString());
+		LOGGER.debug("Enter loginFacebookAccount method on UserAccountServiceImpl class... ");
 
 		ResponseDTO logInResponseDTO = new ResponseDTO();
 		
-		logInResponseDTO.setUserId(userDetailsRepository.findUserIdByEmailOrPhoneAndPassword(logInFacebookAccountDTO.getEmail(),
-				logInFacebookAccountDTO.getPhone(), logInFacebookAccountDTO.getPassword()));
-		//System.out.println(userIdDTO.toString());
+		logInResponseDTO.setUserId(userDetailsRepository.findUserIdByEmailOrPhone(logInFacebookAccountDTO.getEmail(),
+				logInFacebookAccountDTO.getPhone()));
 		
 		if(logInResponseDTO.getUserId() == null) {
 			//System.out.println("Worked");
-			logInResponseDTO.setResponseMessage("Your Email or Phone number not found in our databas");
+			logInResponseDTO.setResponseMessage("Your Email or Phone number not found in our database");
 			logInResponseDTO.setStatusCode(404);
+			return logInResponseDTO;
+		}
+		
+		logInResponseDTO.setUserId(userDetailsRepository.findUserIdByEmailOrPhoneAndPassword(logInFacebookAccountDTO.getEmail(),
+				logInFacebookAccountDTO.getPhone(), logInFacebookAccountDTO.getPassword()));
+		
+		if(logInResponseDTO.getUserId() == null) {
+			logInResponseDTO.setResponseMessage("Your Email or Phone number desen't match with password!");
+			logInResponseDTO.setStatusCode(401);
 			return logInResponseDTO;
 		}
 		
@@ -154,7 +152,8 @@ public class UserAccountServiceImpl implements UserAccountService {
 	}
 
 	public FacebookProfileDTO facebookProfile(String userId) {
-
+		LOGGER.debug("Enter facebookProfile method on UserAccountServiceImpl class... ");
+		
 		FacebookProfileDTO facebookProfileDTO = new FacebookProfileDTO();
 		List<Object[]> list = userDetailsRepository.findNameByUserId(userId);
 
@@ -172,8 +171,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 	}
 
 	public ResponseDTO updateUserPassword(@Valid PasswordUpdateDTO passwordUpdateDTO) {
-		
-		System.out.println(passwordUpdateDTO.toString());
+		LOGGER.debug("Enter updateUserPassword method on UserAccountServiceImpl class... ");
 
 		ResponseDTO updatePasswordResponseDTO = new ResponseDTO();
 		
@@ -201,7 +199,7 @@ public class UserAccountServiceImpl implements UserAccountService {
 	}
 
 	public ResponseDTO deleteUserAccount(String userId) {
-		
+		LOGGER.debug("Enter deleteUserAccount method on UserAccountServiceImpl class... ");
 		ResponseDTO deleteAccountResponseDTO = new ResponseDTO();
 		
 		Integer deletedRow = 0;

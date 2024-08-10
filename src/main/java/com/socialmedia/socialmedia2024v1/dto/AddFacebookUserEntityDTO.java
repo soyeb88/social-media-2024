@@ -12,12 +12,14 @@ import jakarta.validation.constraints.Past;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
+@Builder
 public class AddFacebookUserEntityDTO {
 	
 	@NotBlank
@@ -25,12 +27,12 @@ public class AddFacebookUserEntityDTO {
 	@Size(min=5, max=20)
 	private String password;
 	
-	//@Email
-	//@NotBlank
+	@Email
+	@NotBlank
 	private String email;
 	
-	//@Pattern(regexp="[0-9]+")
-	//@Size(min=4, max=15)
+	@Pattern(regexp="[0-9]+")
+	@Size(min=4, max=15)
 	private String phone;
 	
 	@NotBlank

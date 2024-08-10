@@ -19,18 +19,11 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.validation.Valid;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.ObjectWriter;
-import com.socialmedia.socialmedia2024v1.config.JasyptEncryptorConfig;
-import com.socialmedia.socialmedia2024v1.config.JsonSchemaCofig;
 import com.socialmedia.socialmedia2024v1.dto.AddFacebookUserEntityDTO;
-import com.socialmedia.socialmedia2024v1.dto.AddUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.LogInFacebookAccountDTO;
-import com.socialmedia.socialmedia2024v1.dto.LogInUserEntityDTO;
 import com.socialmedia.socialmedia2024v1.dto.PasswordUpdateDTO;
 import com.socialmedia.socialmedia2024v1.dto.ResponseDTO;
 import com.socialmedia.socialmedia2024v1.exceptions.ResourcesNotFoundExceptionHandler;
-import com.socialmedia.socialmedia2024v1.service.UserAccountService;
 import com.socialmedia.socialmedia2024v1.service.impl.UserAccountServiceImpl;
 import com.socialmedia.socialmedia2024v1.util.Util;
 import com.socialmedia.socialmedia2024v1.util.Service;
@@ -67,6 +60,7 @@ public class SocialMedia2024V1Controller {
 	 * @param AddFacebookUserEntityDTO
 	 * @return ResponseEntity<Object>
 	 * @throws JsonProcessingException 
+	 * @throws ResourcesNotFoundExceptionHandler  
 	 * @throws ParseException 
 	 * 
 	 **/
@@ -78,11 +72,9 @@ public class SocialMedia2024V1Controller {
 		//need to fix DOB format 
 		//System.out.println(new JsonSchemaCofig().jsonSchema(addFacebookUserEntityDTO));
 		
-		System.out.println(addFacebookUserEntityDTO);
 		ResponseDTO signUpResponseDTO = new ResponseDTO();
 		signUpResponseDTO = userAccountService.createFacebookUserDetails(addFacebookUserEntityDTO);
-		
-		System.out.println(signUpResponseDTO);
+
 		
 		LOGGER.debug("Invoking userAccountService method from createUserAccount in SocialMedia2024V1Controller class.");
 		
@@ -92,7 +84,6 @@ public class SocialMedia2024V1Controller {
 			return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(Util.ObjectWriterMapping(signUpResponseDTO));
 		}
 		else if(signUpResponseDTO.getStatusCode() == 409) {
-			System.out.println("Existed");
 			return ResponseEntity.status(HttpStatus.CONFLICT).body(Util.ObjectWriterMapping(signUpResponseDTO));
 		}
 		
@@ -100,17 +91,26 @@ public class SocialMedia2024V1Controller {
 	}
 	
 	
+	/**
+	 * 
+	 * @param LogInFacebookAccountDTO
+	 * @return ResponseEntity<String>
+	 * @throws JsonProcessingException 
+	 * @throws ResourcesNotFoundExceptionHandler
+	 * 
+	 **/
 	@PostMapping("/facebook/login")
 	public ResponseEntity<String> logInFacebookAccount(@Valid @RequestBody LogInFacebookAccountDTO logInFacebookAccountDTO)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
-		
-		System.out.println(logInFacebookAccountDTO.toString());
+		LOGGER.debug("Enter logInFacebookAccount method from SocialMedia2024V1Controller class... ");
 		
 		ResponseDTO logInResponseDTO = new ResponseDTO();
 		
 		logInResponseDTO = userAccountService.loginFacebookAccount(logInFacebookAccountDTO);
-		
-		System.out.println(logInResponseDTO.toString());
 
+		if(logInResponseDTO.getStatusCode() == 401) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body(Util.ObjectWriterMapping(logInResponseDTO));
+		}
+		
 		if(logInResponseDTO.getStatusCode() == 404) {
 			return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Util.ObjectWriterMapping(logInResponseDTO));
 		}
@@ -118,17 +118,33 @@ public class SocialMedia2024V1Controller {
 		return ResponseEntity.status(HttpStatus.OK).body(Util.ObjectWriterMapping(logInResponseDTO));
 	}
 	
-	
+	/**
+	 * 
+	 * @param id
+	 * @return ResponseEntity<String>
+	 * @throws JsonProcessingException 
+	 * @throws ResourcesNotFoundExceptionHandler
+	 * 
+	 **/
 	@GetMapping("/facebook/profile/{id}")
 	public ResponseEntity<String> getFacebookProfileByUserId(@PathVariable String id)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
-
+		LOGGER.debug("Enter getFacebookProfileByUserId method from SocialMedia2024V1Controller class... ");
+		
 		return ResponseEntity.status(HttpStatus.OK).body(Util.ObjectWriterMapping(userAccountService.facebookProfile(id)));
 	}
 	
-	
+	/**
+	 * 
+	 * @param PasswordUpdateDTO
+	 * @return ResponseEntity<String>
+	 * @throws JsonProcessingException 
+	 * @throws ResourcesNotFoundExceptionHandler
+	 * 
+	 **/
 	@PutMapping("/facebook/update")
 	public ResponseEntity<String> updateUserPasswordByUserId(@Valid @RequestBody PasswordUpdateDTO passwordUpdateDTO)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
-
+		LOGGER.debug("Enter updateUserPasswordByUserId method from SocialMedia2024V1Controller class... ");
+		
 		ResponseDTO updatePasswordResponseDTO = new ResponseDTO();
 		
 		updatePasswordResponseDTO = userAccountService.updateUserPassword(passwordUpdateDTO);
@@ -140,8 +156,17 @@ public class SocialMedia2024V1Controller {
 		return ResponseEntity.status(HttpStatus.OK).body(Util.ObjectWriterMapping(updatePasswordResponseDTO));
 	}
 	
+	/**
+	 * 
+	 * @param userId
+	 * @return ResponseEntity<String>
+	 * @throws JsonProcessingException 
+	 * @throws ResourcesNotFoundExceptionHandler
+	 * 
+	 **/
 	@DeleteMapping("/facebook/{userId}")
 	public ResponseEntity<String> deleteUserAccountByUserId(@PathVariable String userId)  throws ResourcesNotFoundExceptionHandler, JsonProcessingException {
+		LOGGER.debug("Enter deleteUserAccountByUserId method from SocialMedia2024V1Controller class... ");
 		
 		ResponseDTO deleteAccountResponseDTO = new ResponseDTO();
 		
