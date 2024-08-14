@@ -1,207 +1,218 @@
-2024-08-11 04:14:57 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
-2024-08-11 04:15:09 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-11 04:15:10 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-08-11 04:15:10 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
-2024-08-11 04:15:10 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-08-11 04:15:10 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-08-11 04:15:14 - o.s.web.client.RestTemplate - HTTP POST http://localhost:49965/facebook/signup
-2024-08-11 04:15:14 - o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
-2024-08-11 04:15:15 - o.s.web.client.RestTemplate - Writing [AddFacebookUserEntityDTO(password=Dhaka_866, email=soyeb888@gmail.com, phone=null, firstName=Soyeb, lastName=Ahmed, gender=m, dob=1994-12-22)] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1fcef7
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@4b2ca159
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
-2024-08-11 04:15:15 - o.s.web.servlet.DispatcherServlet - POST "/facebook/signup", parameters={}
-2024-08-11 04:15:15 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#createFacebookUserAccount(AddFacebookUserEntityDTO)
-2024-08-11 04:15:15 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AddFacebookUserEntityDTO(password=Dhaka_866, email=soyeb888@gmail.com, phone=null, firstName=Soyeb,  (truncated)...]
-2024-08-11 04:15:16 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, application/*+json] and supported [text/plain, */*, application/json, application/*+json]
-2024-08-11 04:15:16 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["{<EOL><EOL>  "responseMessage" : "Your Account is already exists",<EOL><EOL>  "statusCode" : 409,<EOL><EOL>  "userId" : "soy (truncated)..."]
-2024-08-11 04:15:16 - o.s.web.servlet.DispatcherServlet - Completed 409 CONFLICT
-2024-08-11 04:15:16 - o.s.web.client.RestTemplate - Response 409 CONFLICT
-2024-08-11 04:17:30 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
-2024-08-11 04:17:36 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-11 04:17:36 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-08-11 04:17:36 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
-2024-08-11 04:17:36 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-08-11 04:17:36 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-08-11 04:17:39 - o.s.web.client.RestTemplate - HTTP POST http://localhost:50359/facebook/signup
-2024-08-11 04:17:39 - o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
-2024-08-11 04:17:39 - o.s.web.client.RestTemplate - Writing [AddFacebookUserEntityDTO(password=Dhaka_866, email=soyeb8888@gmail.com, phone=null, firstName=Soyeb, lastName=Ahmed, gender=m, dob=1994-12-22)] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@12504d49
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@218e28d9
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - Completed initialization in 20 ms
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - POST "/facebook/signup", parameters={}
-2024-08-11 04:17:39 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#createFacebookUserAccount(AddFacebookUserEntityDTO)
-2024-08-11 04:17:39 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AddFacebookUserEntityDTO(password=Dhaka_866, email=soyeb8888@gmail.com, phone=null, firstName=Soyeb, (truncated)...]
-2024-08-11 04:17:39 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, application/*+json] and supported [text/plain, */*, application/json, application/*+json]
-2024-08-11 04:17:39 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["{<EOL><EOL>  "responseMessage" : "User Account Created Successfully!",<EOL><EOL>  "statusCode" : 201,<EOL><EOL>  "userId" :  (truncated)..."]
-2024-08-11 04:17:39 - o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
-2024-08-11 04:17:39 - o.s.web.client.RestTemplate - Response 201 CREATED
-2024-08-11 04:17:39 - o.s.web.client.RestTemplate - Reading to [com.socialmedia.socialmedia2024v1.dto.ResponseDTO]
-2024-08-11 04:23:53 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
-2024-08-11 04:23:57 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-11 04:23:58 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-08-11 04:23:58 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
-2024-08-11 04:23:58 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-08-11 04:23:58 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-08-11 04:24:00 - o.s.web.client.RestTemplate - HTTP POST http://localhost:50475/facebook/signup
-2024-08-11 04:24:00 - o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
-2024-08-11 04:24:00 - o.s.web.client.RestTemplate - Writing [AddFacebookUserEntityDTO(password=Dhaka_866, email=soyeb88888@gmail.com, phone=null, firstName=Soyeb, lastName=Ahmed, gender=m, dob=1994-12-22)] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@49de2cc4
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@29e8c09c
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - Completed initialization in 23 ms
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - POST "/facebook/signup", parameters={}
-2024-08-11 04:24:01 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#createFacebookUserAccount(AddFacebookUserEntityDTO)
-2024-08-11 04:24:01 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AddFacebookUserEntityDTO(password=Dhaka_866, email=soyeb88888@gmail.com, phone=null, firstName=Soyeb (truncated)...]
-2024-08-11 04:24:01 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, application/*+json] and supported [text/plain, */*, application/json, application/*+json]
-2024-08-11 04:24:01 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["{<EOL><EOL>  "responseMessage" : "User Account Created Successfully!",<EOL><EOL>  "statusCode" : 201,<EOL><EOL>  "userId" :  (truncated)..."]
-2024-08-11 04:24:01 - o.s.web.client.RestTemplate - Response 201 CREATED
-2024-08-11 04:24:01 - o.s.web.client.RestTemplate - Reading to [com.socialmedia.socialmedia2024v1.dto.ResponseDTO]
-2024-08-11 04:24:01 - o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
-2024-08-11 04:24:01 - o.s.test.context.TestContextManager - Caught exception while invoking 'afterTestMethod' callback on TestExecutionListener [org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener] for test method [public void com.socialmedia.socialmedia2024v1.integration.SignUpIntegrationTest.createUserAccount()] and test instance [com.socialmedia.socialmedia2024v1.integration.SignUpIntegrationTest@6a4d72bd]
-org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of Byte array resource [from inlined SQL statement: DELETE FROM socialmedia.user_details WHERE email=soyeb88888@gmail.com]: DELETE FROM socialmedia.user_details WHERE email=soyeb88888@gmail.com
-	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:282)
-	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:254)
-	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:54)
-	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.execute(ResourceDatabasePopulator.java:269)
-	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.lambda$executeSqlScripts$8(SqlScriptsTestExecutionListener.java:310)
-	at org.springframework.transaction.support.TransactionOperations.lambda$executeWithoutResult$0(TransactionOperations.java:68)
-	at org.springframework.transaction.support.TransactionTemplate.execute(TransactionTemplate.java:140)
-	at org.springframework.transaction.support.TransactionOperations.executeWithoutResult(TransactionOperations.java:67)
-	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.executeSqlScripts(SqlScriptsTestExecutionListener.java:310)
-	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.lambda$executeSqlScripts$4(SqlScriptsTestExecutionListener.java:229)
-	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
-	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.executeSqlScripts(SqlScriptsTestExecutionListener.java:229)
-	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.executeSqlScripts(SqlScriptsTestExecutionListener.java:173)
-	at org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener.afterTestMethod(SqlScriptsTestExecutionListener.java:140)
-	at org.springframework.test.context.TestContextManager.afterTestMethod(TestContextManager.java:440)
-	at org.springframework.test.context.junit.jupiter.SpringExtension.afterEach(SpringExtension.java:206)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAfterEachCallbacks$12(TestMethodTestDescriptor.java:260)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAllAfterMethodsOrCallbacks$13(TestMethodTestDescriptor.java:276)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.lambda$invokeAllAfterMethodsOrCallbacks$14(TestMethodTestDescriptor.java:276)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeAllAfterMethodsOrCallbacks(TestMethodTestDescriptor.java:275)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.invokeAfterEachCallbacks(TestMethodTestDescriptor.java:259)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:144)
-	at org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor.execute(TestMethodTestDescriptor.java:68)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:151)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.invokeAll(SameThreadHierarchicalTestExecutorService.java:41)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$6(NodeTestTask.java:155)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$8(NodeTestTask.java:141)
-	at org.junit.platform.engine.support.hierarchical.Node.around(Node.java:137)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.lambda$executeRecursively$9(NodeTestTask.java:139)
-	at org.junit.platform.engine.support.hierarchical.ThrowableCollector.execute(ThrowableCollector.java:73)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.executeRecursively(NodeTestTask.java:138)
-	at org.junit.platform.engine.support.hierarchical.NodeTestTask.execute(NodeTestTask.java:95)
-	at org.junit.platform.engine.support.hierarchical.SameThreadHierarchicalTestExecutorService.submit(SameThreadHierarchicalTestExecutorService.java:35)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestExecutor.execute(HierarchicalTestExecutor.java:57)
-	at org.junit.platform.engine.support.hierarchical.HierarchicalTestEngine.execute(HierarchicalTestEngine.java:54)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:147)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:127)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:90)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.lambda$execute$0(EngineExecutionOrchestrator.java:55)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.withInterceptedStreams(EngineExecutionOrchestrator.java:102)
-	at org.junit.platform.launcher.core.EngineExecutionOrchestrator.execute(EngineExecutionOrchestrator.java:54)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:114)
-	at org.junit.platform.launcher.core.DefaultLauncher.execute(DefaultLauncher.java:95)
-	at org.junit.platform.launcher.core.DefaultLauncherSession$DelegatingLauncher.execute(DefaultLauncherSession.java:91)
-	at org.junit.platform.launcher.core.SessionPerRequestLauncher.execute(SessionPerRequestLauncher.java:60)
-	at org.eclipse.jdt.internal.junit5.runner.JUnit5TestReference.run(JUnit5TestReference.java:100)
-	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:40)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:529)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:757)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:452)
-	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:210)
-Caused by: java.sql.SQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '@gmail.com' at line 1
-	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120)
-	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
-	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:763)
-	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
-	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:94)
-	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
-	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:261)
-	... 71 common frames omitted
-2024-08-11 04:30:55 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
-2024-08-11 04:31:01 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-11 04:31:01 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-08-11 04:31:01 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
-2024-08-11 04:31:02 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-08-11 04:31:02 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-08-11 04:31:04 - o.s.web.client.RestTemplate - HTTP POST http://localhost:50611/facebook/signup
-2024-08-11 04:31:05 - o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
-2024-08-11 04:31:05 - o.s.web.client.RestTemplate - Writing [AddFacebookUserEntityDTO(password=Dhaka_866, email=soyeb88888@gmail.com, phone=null, firstName=Soyeb, lastName=Ahmed, gender=m, dob=1994-12-22)] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2c841ac4
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@695f382c
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - Completed initialization in 33 ms
-2024-08-11 04:31:05 - o.s.web.servlet.DispatcherServlet - POST "/facebook/signup", parameters={}
-2024-08-11 04:31:05 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#createFacebookUserAccount(AddFacebookUserEntityDTO)
-2024-08-11 04:31:05 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AddFacebookUserEntityDTO(password=Dhaka_866, email=soyeb88888@gmail.com, phone=null, firstName=Soyeb (truncated)...]
-2024-08-11 04:31:06 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, application/*+json] and supported [text/plain, */*, application/json, application/*+json]
-2024-08-11 04:31:06 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["{<EOL><EOL>  "responseMessage" : "User Account Created Successfully!",<EOL><EOL>  "statusCode" : 201,<EOL><EOL>  "userId" :  (truncated)..."]
-2024-08-11 04:31:06 - o.s.web.client.RestTemplate - Response 201 CREATED
-2024-08-11 04:31:06 - o.s.web.client.RestTemplate - Reading to [com.socialmedia.socialmedia2024v1.dto.ResponseDTO]
-2024-08-11 04:31:06 - o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
-2024-08-11 04:34:10 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
-2024-08-11 04:34:14 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2024-08-11 04:34:14 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
-2024-08-11 04:34:15 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
-2024-08-11 04:34:15 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
-2024-08-11 04:34:15 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
-2024-08-11 04:34:17 - o.s.web.client.RestTemplate - HTTP POST http://localhost:50629/facebook/signup
-2024-08-11 04:34:17 - o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
-2024-08-11 04:34:17 - o.s.web.client.RestTemplate - Writing [AddFacebookUserEntityDTO(password=Dhaka_866, email=test1@test.com, phone=null, firstName=Soyeb, lastName=Ahmed, gender=m, dob=1994-12-22)] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@26e588b7
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@29fa465a
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - Completed initialization in 22 ms
-2024-08-11 04:34:17 - o.s.web.servlet.DispatcherServlet - POST "/facebook/signup", parameters={}
-2024-08-11 04:34:17 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#createFacebookUserAccount(AddFacebookUserEntityDTO)
-2024-08-11 04:34:17 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AddFacebookUserEntityDTO(password=Dhaka_866, email=test1@test.com, phone=null, firstName=Soyeb, last (truncated)...]
-2024-08-11 04:34:18 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, application/*+json] and supported [text/plain, */*, application/json, application/*+json]
-2024-08-11 04:34:18 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["{<EOL><EOL>  "responseMessage" : "User Account Created Successfully!",<EOL><EOL>  "statusCode" : 201,<EOL><EOL>  "userId" :  (truncated)..."]
-2024-08-11 04:34:18 - o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
-2024-08-11 04:34:18 - o.s.web.client.RestTemplate - Response 201 CREATED
-2024-08-11 04:34:18 - o.s.web.client.RestTemplate - Reading to [com.socialmedia.socialmedia2024v1.dto.ResponseDTO]
+2024-08-15 00:18:58 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:18:59 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:19:02 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:19:02 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:19:03 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:19:03 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:19:03 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:19:04 - o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2024-08-15 00:19:04 - o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8080 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8080 or configure this application to listen on another port.
+
+2024-08-15 00:19:41 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:19:42 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:19:44 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:19:44 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:19:44 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:19:44 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:19:44 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:19:46 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-15 00:19:46 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-08-15 00:19:46 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-08-15 00:19:46 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-08-15 00:19:46 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6e5b814e
+2024-08-15 00:19:46 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@b131468
+2024-08-15 00:19:46 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-15 00:19:46 - o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2024-08-15 00:20:47 - o.s.web.servlet.DispatcherServlet - POST "/test", parameters={}
+2024-08-15 00:20:47 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Using @ExceptionHandler com.socialmedia.socialmedia2024v1.exceptions.ExceptionControllerAdvice#exceptionHandler(Exception)
+2024-08-15 00:20:47 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [*/*] and supported [application/json, application/*+json]
+2024-08-15 00:20:47 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing [ErrorInfo(errorMessage=Request method 'POST' is not supported, errorCode=500, timestampInfo=2024-08- (truncated)...]
+2024-08-15 00:20:47 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' is not supported]
+2024-08-15 00:20:47 - o.s.web.servlet.DispatcherServlet - Completed 500 INTERNAL_SERVER_ERROR
+2024-08-15 00:20:54 - o.s.web.servlet.DispatcherServlet - GET "/test", parameters={}
+2024-08-15 00:20:54 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#testEndPoint()
+2024-08-15 00:20:54 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json]
+2024-08-15 00:20:54 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Writing ["Hello Sadia"]
+2024-08-15 00:20:54 - o.s.web.servlet.DispatcherServlet - Completed 200 OK
+2024-08-15 00:21:23 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:21:26 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:21:30 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:21:30 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:21:30 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:21:30 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:21:30 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:21:33 - o.s.web.client.RestTemplate - HTTP POST http://localhost:51172/facebook/signup
+2024-08-15 00:21:33 - o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2024-08-15 00:21:33 - o.s.web.client.RestTemplate - Writing [AddFacebookUserEntityDTO(password=Dhaka_866, email=test1@test.com, phone=null, firstName=Soyeb, lastName=Ahmed, gender=m, dob=1994-12-22)] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1fb4377d
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@21acc86a
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2024-08-15 00:21:33 - o.s.web.servlet.DispatcherServlet - POST "/facebook/signup", parameters={}
+2024-08-15 00:21:33 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#createFacebookUserAccount(AddFacebookUserEntityDTO)
+2024-08-15 00:21:33 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AddFacebookUserEntityDTO(password=Dhaka_866, email=test1@test.com, phone=null, firstName=Soyeb, last (truncated)...]
+2024-08-15 00:21:34 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, application/*+json] and supported [text/plain, */*, application/json, application/*+json]
+2024-08-15 00:21:34 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["{<EOL><EOL>  "responseMessage" : "User Account Created Successfully!",<EOL><EOL>  "statusCode" : 201,<EOL><EOL>  "userId" :  (truncated)..."]
+2024-08-15 00:21:34 - o.s.web.client.RestTemplate - Response 201 CREATED
+2024-08-15 00:21:34 - o.s.web.client.RestTemplate - Reading to [com.socialmedia.socialmedia2024v1.dto.ResponseDTO]
+2024-08-15 00:21:34 - o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2024-08-15 00:21:34 - o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@20395afe
+2024-08-15 00:21:35 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:21:36 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:21:36 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:21:36 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:21:36 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:21:36 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:21:37 - o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@58842f55
+2024-08-15 00:21:40 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:21:41 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:21:42 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:21:42 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:21:42 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:21:42 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:21:43 - o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@20395afe, started on Thu Aug 15 00:21:34 BDT 2024
+2024-08-15 00:21:43 - o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@58842f55, started on Thu Aug 15 00:21:37 BDT 2024
+2024-08-15 00:24:53 - o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@312afbc7
+2024-08-15 00:25:04 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:25:07 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:25:07 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:25:08 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:25:08 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:25:08 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:25:10 - o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@312afbc7, started on Thu Aug 15 00:24:53 BDT 2024
+2024-08-15 00:34:05 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:34:05 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:34:06 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:34:06 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:34:06 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:34:06 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:34:06 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:34:35 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:34:35 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:34:35 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:34:35 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:34:35 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:34:36 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:34:36 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:35:41 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:35:41 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:35:42 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:35:42 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:35:42 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:35:42 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:35:42 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:35:45 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:35:45 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:35:45 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:35:46 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:35:46 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:35:46 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:35:46 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:45:31 - o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@a567e72
+2024-08-15 00:45:41 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:45:44 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:45:45 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:45:45 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:45:46 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:45:46 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:45:48 - o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@a567e72, started on Thu Aug 15 00:45:31 BDT 2024
+2024-08-15 00:46:23 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:46:26 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:46:30 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:46:30 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:46:31 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:46:31 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:46:31 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:46:34 - o.s.web.client.RestTemplate - HTTP POST http://localhost:51462/facebook/signup
+2024-08-15 00:46:34 - o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2024-08-15 00:46:34 - o.s.web.client.RestTemplate - Writing [AddFacebookUserEntityDTO(password=Dhaka_866, email=test1@test.com, phone=null, firstName=Soyeb, lastName=Ahmed, gender=m, dob=1994-12-22)] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@6980e66a
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@7a3c541e
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - Completed initialization in 7 ms
+2024-08-15 00:46:34 - o.s.web.servlet.DispatcherServlet - POST "/facebook/signup", parameters={}
+2024-08-15 00:46:34 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#createFacebookUserAccount(AddFacebookUserEntityDTO)
+2024-08-15 00:46:34 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AddFacebookUserEntityDTO(password=Dhaka_866, email=test1@test.com, phone=null, firstName=Soyeb, last (truncated)...]
+2024-08-15 00:46:35 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, application/*+json] and supported [text/plain, */*, application/json, application/*+json]
+2024-08-15 00:46:35 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["{<EOL><EOL>  "responseMessage" : "User Account Created Successfully!",<EOL><EOL>  "statusCode" : 201,<EOL><EOL>  "userId" :  (truncated)..."]
+2024-08-15 00:46:35 - o.s.web.client.RestTemplate - Response 201 CREATED
+2024-08-15 00:46:35 - o.s.web.client.RestTemplate - Reading to [com.socialmedia.socialmedia2024v1.dto.ResponseDTO]
+2024-08-15 00:46:35 - o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2024-08-15 00:46:35 - o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4c97e3d5
+2024-08-15 00:46:37 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:46:38 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:46:38 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:46:38 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:46:38 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:46:38 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:46:39 - o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@50ea4eaa
+2024-08-15 00:46:43 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:46:44 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:46:45 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:46:46 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:46:46 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:46:46 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:46:48 - o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@4c97e3d5, started on Thu Aug 15 00:46:35 BDT 2024
+2024-08-15 00:46:48 - o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@50ea4eaa, started on Thu Aug 15 00:46:39 BDT 2024
+2024-08-15 00:49:31 - o.s.w.f.ServerHttpObservationFilter - Filter 'webMvcObservationFilter' configured for use
+2024-08-15 00:49:33 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:49:37 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:49:37 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:49:38 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:49:38 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:49:38 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:49:40 - o.s.web.client.RestTemplate - HTTP POST http://localhost:51501/facebook/signup
+2024-08-15 00:49:40 - o.s.web.client.RestTemplate - Accept=[application/json, application/*+json]
+2024-08-15 00:49:41 - o.s.web.client.RestTemplate - Writing [AddFacebookUserEntityDTO(password=Dhaka_866, email=test1@test.com, phone=null, firstName=Soyeb, lastName=Ahmed, gender=m, dob=1994-12-22)] with org.springframework.http.converter.json.MappingJackson2HttpMessageConverter
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - Detected StandardServletMultipartResolver
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - Detected AcceptHeaderLocaleResolver
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - Detected FixedThemeResolver
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@1c8e4810
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - Detected org.springframework.web.servlet.support.SessionFlashMapManager@56ed9270
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - Completed initialization in 16 ms
+2024-08-15 00:49:41 - o.s.web.servlet.DispatcherServlet - POST "/facebook/signup", parameters={}
+2024-08-15 00:49:41 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - Mapped to com.socialmedia.socialmedia2024v1.controller.SocialMedia2024V1Controller#createFacebookUserAccount(AddFacebookUserEntityDTO)
+2024-08-15 00:49:41 - o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor - Read "application/json;charset=UTF-8" to [AddFacebookUserEntityDTO(password=Dhaka_866, email=test1@test.com, phone=null, firstName=Soyeb, last (truncated)...]
+2024-08-15 00:49:42 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Using 'application/json', given [application/json, application/*+json] and supported [text/plain, */*, application/json, application/*+json]
+2024-08-15 00:49:42 - o.s.w.s.m.m.a.HttpEntityMethodProcessor - Writing ["{<EOL><EOL>  "responseMessage" : "User Account Created Successfully!",<EOL><EOL>  "statusCode" : 201,<EOL><EOL>  "userId" :  (truncated)..."]
+2024-08-15 00:49:42 - o.s.web.client.RestTemplate - Response 201 CREATED
+2024-08-15 00:49:42 - o.s.web.client.RestTemplate - Reading to [com.socialmedia.socialmedia2024v1.dto.ResponseDTO]
+2024-08-15 00:49:42 - o.s.web.servlet.DispatcherServlet - Completed 201 CREATED
+2024-08-15 00:49:42 - o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@14b53f58
+2024-08-15 00:49:43 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:49:44 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:49:45 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:49:45 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:49:45 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:49:45 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:49:46 - o.s.w.c.s.GenericWebApplicationContext - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@29e94753
+2024-08-15 00:49:49 - org.hibernate.orm.deprecation - HHH90000025: MySQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-15 00:49:50 - o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-15 00:49:51 - o.s.w.s.m.m.a.RequestMappingHandlerAdapter - ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-15 00:49:51 - o.s.w.s.m.m.a.RequestMappingHandlerMapping - 8 mappings in 'requestMappingHandlerMapping'
+2024-08-15 00:49:51 - o.s.w.s.h.SimpleUrlHandlerMapping - Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-15 00:49:51 - o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - ControllerAdvice beans: 1 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-15 00:49:53 - o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@14b53f58, started on Thu Aug 15 00:49:42 BDT 2024
+2024-08-15 00:49:53 - o.s.w.c.s.GenericWebApplicationContext - Closing org.springframework.web.context.support.GenericWebApplicationContext@29e94753, started on Thu Aug 15 00:49:46 BDT 2024

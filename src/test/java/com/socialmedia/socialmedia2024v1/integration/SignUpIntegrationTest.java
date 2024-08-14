@@ -1,10 +1,9 @@
 package com.socialmedia.socialmedia2024v1.integration;
 
-import static org.junit.Assert.assertEquals;
-
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -59,7 +58,7 @@ public class SignUpIntegrationTest {
 		
 		ResponseDTO responseDTO = restTemplate.postForObject(baseUrl + "/signup", addFacebookUserEntityDTO, signUpResponseDTO.getClass());
 		
-		assertEquals(signUpResponseDTO,responseDTO);
+		Assertions.assertEquals(signUpResponseDTO,responseDTO);
 	}
 
 }

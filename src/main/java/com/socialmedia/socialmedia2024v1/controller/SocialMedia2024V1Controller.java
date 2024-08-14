@@ -35,8 +35,8 @@ import com.socialmedia.socialmedia2024v1.util.Service;
  * 
  **/
 
-//@CrossOrigin(origins="http://localhost:80/")
-@CrossOrigin(origins="http://localhost:3000/")
+@CrossOrigin(origins="http://localhost:80/")
+//@CrossOrigin(origins="http://localhost:3000/")
 
 @RestController
 @RequestMapping
