@@ -51,7 +51,7 @@ public class SocialMedia2024V1Controller {
 	
 	@GetMapping("/test")
 	public String testEndPoint() {
-		return "Hello Sadia Nazneen!";
+		return "Sadia!";
 	}
 	
 	
