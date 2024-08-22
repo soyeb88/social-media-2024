@@ -35,7 +35,7 @@ import com.socialmedia.socialmedia2024v1.util.Service;
  * 
  **/
 
-@CrossOrigin(origins="http://localhost:80/")
+@CrossOrigin(origins="http://localhost/")
 //@CrossOrigin(origins="http://localhost:3000/")
 
 @RestController
@@ -51,7 +51,7 @@ public class SocialMedia2024V1Controller {
 	
 	@GetMapping("/test")
 	public String testEndPoint() {
-		return "Hello Sadia";
+		return "Hello Sadia Nazneen!";
 	}
 	
 	
