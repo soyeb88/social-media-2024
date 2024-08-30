@@ -96,14 +96,13 @@
 					</excludes>
 				</configuration>
 			</plugin>
-
 			<plugin>
 				<groupId>com.github.ulisesbocchio</groupId>
 				<artifactId>jasypt-maven-plugin</artifactId>
 				<version>3.0.5</version>
 			</plugin>
-
 		</plugins>
+		<finalName>social-media-2024-v1</finalName>
 	</build>
 	<repositories>
 		<repository>
