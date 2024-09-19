@@ -34,6 +34,7 @@ import com.socialmedia.socialmedia2024v1.service.UserAccountService;
 @AutoConfigureMockMvc
 public class FacebookUnitTest {
 
+	
 	@Autowired
 	private UserAccountService userAccountService;
 
@@ -43,7 +44,7 @@ public class FacebookUnitTest {
 
 	@Test
 	public void givenAddUserAccountObject_createFacebookUserDetails_thenReturn_SuccessResponse() throws Exception {
-
+		
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
 		
 		

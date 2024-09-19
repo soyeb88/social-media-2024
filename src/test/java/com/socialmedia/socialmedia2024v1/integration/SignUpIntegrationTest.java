@@ -25,11 +25,10 @@ public class SignUpIntegrationTest {
 
 	private String baseUrl = "http://localhost:";
 
-	// 8083/facebook/signup
 	private static RestTemplate restTemplate;
 
 	@Autowired
-	UserDetailsRepository userDetailsRepository;
+	private UserDetailsRepository userDetailsRepository;
 
 	@BeforeAll
 	public static void init() {
@@ -38,11 +37,11 @@ public class SignUpIntegrationTest {
 
 	@BeforeEach
 	public void setUp() {
-		baseUrl = baseUrl.concat(port + "").concat("/facebook");
+		baseUrl = baseUrl.concat(port + "").concat("/facebook/signup");
 	}
 
 	@Test
-	@Sql(statements="DELETE FROM socialmedia.user_details WHERE email='test1@test.com'", 
+	@Sql(statements="delete from socialmedia.user_details where email='test1@test.com'", 
 		executionPhase = Sql.ExecutionPhase.AFTER_TEST_METHOD)
 	public void createUserAccount() {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
@@ -56,7 +55,7 @@ public class SignUpIntegrationTest {
 				.lastName("Ahmed").email("test1@test.com").phone(null).gender("m").dob(LocalDate.parse("22 Dec 1994", formatter))
 				.build();
 		
-		ResponseDTO responseDTO = restTemplate.postForObject(baseUrl + "/signup", addFacebookUserEntityDTO, signUpResponseDTO.getClass());
+		ResponseDTO responseDTO = restTemplate.postForObject(baseUrl, addFacebookUserEntityDTO, signUpResponseDTO.getClass());
 		
 		Assertions.assertEquals(signUpResponseDTO,responseDTO);
 	}
