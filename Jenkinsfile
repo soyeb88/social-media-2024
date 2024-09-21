@@ -25,5 +25,12 @@ pipeline{
                 }
             }
         }
+        stage('Deploy to K8s'){
+            steps{
+                script{
+                	bat 'kubectl apply -f social-media-2024-v1-api.yaml'
+                }
+            }
+        }
     }
 }
