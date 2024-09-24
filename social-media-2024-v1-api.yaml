@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: social-media-2024-v1-app-api
-          image: soyeb88/social-media-2024-v1:0.0.1
+          image: soyeb88/social-media-2024-v1:latest
           imagePullPolicy: Always
           ports:
             - containerPort: 8086
