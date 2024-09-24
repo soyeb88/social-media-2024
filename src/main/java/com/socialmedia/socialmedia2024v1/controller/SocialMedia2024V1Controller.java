@@ -52,7 +52,7 @@ public class SocialMedia2024V1Controller {
 	
 	@GetMapping("/test")
 	public String testEndPoint() {
-		return "Hello v1.0.2";
+		return "Hello v1.0.3";
 	}
 	
 	
