@@ -14,7 +14,7 @@ pipeline{
         }
         stage('Build Docker Image'){
             steps{
-                bat 'docker build -t soyeb88/social-media-2024-v1:0.0.1 .'
+                bat 'docker build -t soyeb88/social-media-2024-v1:latest .'
             }
         }
         stage('Push Docker Hub'){
