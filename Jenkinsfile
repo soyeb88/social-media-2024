@@ -28,7 +28,7 @@ pipeline{
         stage('Deploy to K8s'){
             steps{
                 script{
-                	kubeconfig(credentialsId: 'jenkins-secret', serverUrl: 'https://127.0.0.1:51148') {
+                	withKubeConfig(credentialsId: 'jenkins-secret', namespace: 'jenkins', restrictKubeConfigAccess: false, serverUrl: 'https://127.0.0.1:51148') {
     					bat 'kubectl apply -f social-media-2024-v1-api.yaml'
 					}
                 }
