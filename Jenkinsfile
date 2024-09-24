@@ -28,40 +28,9 @@ pipeline{
         stage('Deploy to K8s'){
             steps{
                 script{
-                	kubeconfig(caCertificate: '''apiVersion: v1
-clusters:
-- cluster:
-    certificate-authority: C:\\Users\\soyeb\\.minikube\\ca.crt
-    extensions:
-    - extension:
-        last-update: Sun, 22 Sep 2024 04:27:24 +06
-        provider: minikube.sigs.k8s.io
-        version: v1.33.1
-      name: cluster_info
-    server: https://127.0.0.1:51795
-  name: minikube
-contexts:
-- context:
-    cluster: minikube
-    extensions:
-    - extension:
-        last-update: Sun, 22 Sep 2024 04:27:24 +06
-        provider: minikube.sigs.k8s.io
-        version: v1.33.1
-      name: context_info
-    namespace: default
-    user: minikube
-  name: minikube
-current-context: minikube
-kind: Config
-preferences: {}
-users:
-- name: minikube
-  user:
-    client-certificate: C:\\Users\\soyeb\\.minikube\\profiles\\minikube\\client.crt
-    client-key: C:\\Users\\soyeb\\.minikube\\profiles\\minikube\\client.key''', credentialsId: 'kubeconfig-pwd', serverUrl: '') {
-    // some block
-}
+                	kubeconfig(credentialsId: 'jenkins-secret', serverUrl: 'https://127.0.0.1:51148') {
+    					// some block
+					}
                 }
             }
         }
