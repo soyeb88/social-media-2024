@@ -29,7 +29,7 @@ pipeline{
             steps{
                 script{
                 	kubeconfig(credentialsId: 'jenkins-secret', serverUrl: 'https://127.0.0.1:51148') {
-    					// some block
+    					bat 'kubectl apply -f social-media-2024-v1-api.yaml'
 					}
                 }
             }
