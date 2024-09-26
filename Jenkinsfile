@@ -21,7 +21,7 @@ pipeline{
             steps{
                 script{
                     bat 'docker login -u soyeb88 -p Dhaka_866'
-                    bat 'docker push soyeb88/social-media-2024-v1:0.0.1'
+                    bat 'docker push soyeb88/social-media-2024-v1:latest'
                 }
             }
         }
