@@ -3,6 +3,10 @@ pipeline{
     tools{
         maven 'maven_3_9_8'
     }
+    environment {
+        KUBECONFIG = 'C:\\Users\\soyeb\\.kube\\config'
+        MINIKUBE_HOME = 'C:\\Users\\soyeb\\.minikube'
+    }
     stages{
         stage('Build Maven'){
             steps{
@@ -28,12 +32,11 @@ pipeline{
         stage('Deploy to K8s'){
             steps{
                 script{
-                	withKubeConfig(credentialsId: 'k8s2', namespace: 'jenkins', restrictKubeConfigAccess: false) {
-    					bat 'kubectl apply -f social-media-2024-v1-api.yaml'
-					}
-                	//withKubeConfig(credentialsId: 'jenkins-secret', namespace: 'jenkins', restrictKubeConfigAccess: false, serverUrl: 'https://127.0.0.1:50955') {
-    					//bat 'kubectl apply -f social-media-2024-v1-api.yaml'
-					//}
+					withEnv(["--kubeconfig=${KUBECONFIG}"]) {
+                        // Run your container in Minikube
+                        bat 'kubectl config set-context --current --namespace=jenkins'
+                        bat 'kubectl apply -f social-media-2024-v1-api.yaml'
+                    }
                 }
             }
         }
