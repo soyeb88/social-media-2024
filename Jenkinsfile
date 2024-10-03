@@ -36,7 +36,9 @@ pipeline{
 					withEnv(["--kubeconfig=${KUBECONFIG}"]) {
                         // Run your container in Minikube
                         bat 'kubectl config set-context --current --namespace=jenkins'
+                        bat 'kubectl delete pods -l app=app-api'
                         bat 'kubectl apply -f social-media-2024-v1-api.yaml'
+                        //bat 'minikube image load soyeb88/social-media-2024-v1-frontend:0.0.2'
                     }
                 }
             }
