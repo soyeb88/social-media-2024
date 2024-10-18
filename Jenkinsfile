@@ -44,4 +44,9 @@ pipeline{
             }
         }
     }
+    post{
+        always{
+            slackSend channel: 'slacknotification', message: "Please find status of pipeline - ${currentBuild.currentResult} ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
+        }
+    }
 }
