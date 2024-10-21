@@ -47,6 +47,7 @@ pipeline{
     post{
         always{
             slackSend channel: 'slacknotification', message: "Please find status of pipeline - ${currentBuild.currentResult} ${env.JOB_NAME} ${env.BUILD_NUMBER} ${env.BUILD_URL}"
+            mail bcc: '', body: 'Build Info pipeline', cc: 'soyeb88@gmail.com', from: '', replyTo: '', subject: 'Test Result', to: 'ahmedsoyeb866@gmail.com'
         }
     }
 }
