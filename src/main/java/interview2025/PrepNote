@@ -1,2 +1,213 @@
 Agile Methodology:
 https://monday.com/blog/rnd/the-different-types-of-scrum-meetings-for-beginners/
+
+Theoretical Interview:
+February 19, 2025:
+1. How does SpringBootApplication Annotation work?
+Answer: 
+The @SpringBootApplication annotation in Spring Boot acts as a convenience annotation that combines three other essential annotations: @Configuration, 
+@EnableAutoConfiguration, and @ComponentScan. When used on a class, typically the main application class, it enables several key functionalities:
+@Configuration:
+	It designates the class as a configuration class, allowing the definition of beans using @Bean methods within the class. This eliminates the need for separate configuration files.
+@EnableAutoConfiguration:
+	It enables Spring Boot's auto-configuration mechanism, which automatically configures the application based on the dependencies present in the project's classpath. 
+	It reduces the need for manual configuration by inferring and setting up beans based on the included libraries. 
+@ComponentScan:
+	It instructs Spring to scan for components (e.g., @Component, @Service, @Repository, @Controller) within the package of the annotated class and its sub-packages. 
+	This allows Spring to automatically discover and register these components as beans in the application context.
+
+In essence, @SpringBootApplication simplifies the setup and configuration of a Spring Boot application by combining these three core functionalities into a single annotation.
+It reduces boilerplate code and enables a more streamlined development experience.
+
+2. What is four steps thread life cycle?
+Answer:
+The four steps of a thread life cycle are typically considered to be: New, Runnable, Running, and Blocked 
+(or sometimes called Dead); where a thread is first created in the "New" state, then moves to "Runnable" when ready to execute, then enters the "Running" state 
+when actively executing code, and finally becomes "Blocked" when waiting for an event to proceed. Explanation of each state:
+
+New: The thread is just created and has not yet started execution. 
+Runnable: The thread is ready to run and is waiting for the CPU to allocate time to it. 
+Running: The thread is currently executing code on the CPU. 
+Blocked: The thread is temporarily paused, waiting for a specific condition to be met (like waiting for input or a lock). 
+
+3. What is four steps @Bean life cycle?
+Answer:
+The four primary steps in a Spring "@Bean" lifecycle are: instantiation, dependency injection, initialization (including custom init methods), 
+and destruction (including custom destroy methods); essentially, the bean is created, its dependencies are injected, it undergoes any custom initialization logic, 
+and then is cleaned up when the application context is closed. 
+Breakdown:
+Instantiation:
+	The Spring container creates a new instance of the bean class based on the "@Bean" method definition.
+Dependency Injection:
+	The Spring container injects any necessary dependencies into the newly created bean instance.
+Initialization:
+	Automatic Initialization: Spring might perform some internal initialization steps based on the bean configuration.
+	Custom Initialization: If specified, the "init-method" attribute on the "@Bean" annotation is called, allowing you to execute custom initialization code within your bean.
+Destruction:
+	Automatic Destruction: When the application context is closed, Spring automatically destroys the bean.
+	Custom Destruction: If specified, the "destroy-method" attribute on the "@Bean" annotation is called, allowing you to perform custom cleanup tasks before the bean is destroyed. 
+Key points to remember:
+The "scope" of a bean determines how many instances are created and managed by the Spring container. 
+You can customize the bean lifecycle further by implementing the "InitializingBean" and "DisposableBean" interfaces, which provide additional methods for initialization and destruction.
+ 
+4. What is Bean Annotation?
+Answer: 
+In the Spring Framework, the "Bean Annotation" refers to the @Bean annotation, which is a method-level annotation used to explicitly declare a bean that will be managed 
+by the Spring IoC container, essentially marking a method that creates and configures an object to be registered as a Spring bean within the application context; 
+it's essentially the Java equivalent of the XML <bean> element used in older Spring configurations. 
+Key points about the @Bean annotation:
+Purpose:
+To define a bean within a configuration class, specifying how the bean should be created and configured. 
+Usage:
+You typically use @Bean on a method within a class annotated with @Configuration. 
+Flexibility:
+This annotation allows for custom bean initialization logic and dependency injection within the bean creation process. 
+Example:
+Code
+
+@Configuration
+
+public class AppConfig {
+
+    @Bean
+
+    public MyService myService() {
+
+        return new MyService(); 
+
+    }
+
+}
+In this example:
+AppConfig is marked as a configuration class with @Configuration. 
+The myService() method is annotated with @Bean, indicating that it creates a bean named "myService" which will be managed by Spring
+
+5. What is different between Spring Framework and Spring Boot Application?
+Answer:
+While both are Java frameworks used for application development, Spring Framework is a comprehensive, flexible platform offering various features like dependency injection,
+while Spring Boot is built on top of Spring, providing a quicker way to develop applications by offering pre-configured options and automatic configuration, 
+essentially making it easier to set up and deploy Spring-based applications with less boilerplate code; Spring Boot is considered "opinionated" as it makes many configuration 
+decisions for you, whereas Spring gives developers more control over customization. 
+Key differences:
+Flexibility vs. Convenience:
+Spring Framework offers a wide range of features and allows for fine-grained control over configuration, while Spring Boot prioritizes ease of use with pre-defined configurations
+and starter dependencies, reducing the need for manual setup. 
+Configuration Approach:
+Spring often requires extensive manual configuration through XML or Java annotations, whereas Spring Boot leverages "convention over configuration" by automatically configuring 
+many components based on classpath dependencies. 
+Deployment Simplicity:
+Spring Boot includes embedded servers like Tomcat, allowing you to run applications as standalone JARs without needing a separate application server, making deployment simpler. 
+Microservices Focus:
+Spring Boot is particularly well-suited for developing microservices due to its streamlined setup and auto-configuration capabilities. 
+In summary, Spring Framework is the foundation, providing core features, while Spring Boot is an extension that simplifies the development process by providing pre-configured 
+settings and opinionated defaults, making it faster to build Spring-based applications.
+
+6. What does final and finally do?
+Answer: In programming, "final" is a keyword used to make a variable, method, or class unchangeable, meaning its value cannot be modified after initialization, while "finally" 
+is a block of code within exception handling that always executes after a "try" block, regardless of whether an exception was thrown or not; it's often used to clean up resources 
+like closing files or database connections.
+
+7. What is Super Class of Exception Class?
+Answer: The Throwable class is the superclass of all Java exceptions and errors. It has two subclasses, Error and Exception but they don't represent checked and unchecked exceptions.
+The Exception class has a subclass called RuntimeException that contains most unchecked exceptions.
+Source: https://raygun.com/blog/java-exceptions-terminology/#:~:text=The%20Throwable%20class%20is%20the,that%20contains%20most%20unchecked%20exceptions.
+
+8. What is Functional Interface?
+Answer: A "functional interface" is an interface in programming languages like Java that contains only one abstract method, allowing it to be used with lambda expressions and method references 
+to represent a single function-like behavior; essentially, it's an interface designed to encapsulate a single operation or functionality.
+Source: https://www.geeksforgeeks.org/functional-interfaces-java/
+
+9. What is spring-boot-starter dependency?
+Answer: A "spring-boot-starter" dependency is a pre-configured set of related libraries bundled together in a single dependency within Spring Boot, allowing developers to quickly 
+add a specific functionality (like web development, data access, or messaging) to their project without manually managing each individual library dependency involved; essentially,
+it's a one-stop shop for commonly used components needed for a particular application feature
+Source: https://www.geeksforgeeks.org/spring-boot-starters/
+
+February 21, 2025:
+1. What is difference between Optional and Response Entity?
+Answer: Optional and ResponseEntity serve different purposes in Java and Spring applications.
+Optional is a container object used to represent the presence or absence of a value. It helps avoid NullPointerExceptions by providing a way to explicitly handle cases where a value 
+might be missing. It's a core Java feature introduced in Java 8.
+ResponseEntity, on the other hand, is specific to Spring and represents the entire HTTP response, including the status code, headers, and body. It provides more control over the response 
+that is sent back to the client in a REST API.
+
+2. What is different between Controller and Rest-Controller annotation?
+Answer: In Spring MVC, the primary difference between the @Controller and @RestController annotations is that a @Controller is used for traditional web applications where it returns views 
+(like HTML pages), while a @RestController is specifically designed for building RESTful APIs, automatically returning data directly in the response body as JSON or XML without needing to
+explicitly render a view; essentially, @RestController acts like a @Controller with an implicit @ResponseBody on every method, making it ideal for returning data instead of views. 
+
+3. What is different between final, finally, finalize?
+Answer: "final" is a keyword used to declare a variable, method, or class as unchangeable, meaning its value cannot be modified after initialization; "finally" is a block of code within 
+exception handling that always executes regardless of whether an exception is thrown; and "finalize" is a method called by the garbage collector on an object before it is destroyed, allowing 
+for any necessary cleanup operations before the object is reclaimed.
+
+4. What is different throw and throws?
+Answer: In programming, particularly in languages like Java, "throw" is used to explicitly raise an exception within a method, while "throws" is used in a method signature to declare that a 
+method might throw certain types of exceptions, essentially notifying the caller that they need to handle potential errors; "throw" actively generates the exception, while "throws" simply 
+indicates the possibility of an exception occurring.
+
+5. What is different put and patch?
+Answer: In terms of HTTP requests, "PUT" means completely replacing an existing resource with new data, while "PATCH" means partially updating a resource by modifying only specific fields 
+within it; essentially, PUT replaces the entire resource, whereas PATCH only updates a portion of it. 
+
+6. What is SOA(Service Oriented Architecture)?
+Answer: Service-oriented architecture (SOA) is a software design method that uses reusable components to create applications.
+
+7. What is difference between Microservices and Monolothic Architecture?
+Answer: A monolithic architecture is where an entire application is built as a single, unified codebase, meaning all functionalities are tightly coupled within one unit; whereas, a microservices 
+architecture breaks down an application into smaller, independent services, each responsible for a specific business function, allowing them to be developed, deployed, and scaled separately, with 
+loose coupling between service
+
+8. What is @Actuator in Spring Boot Application and why it use for?
+Answer: In Spring Boot, @Actuator isn't a direct annotation but rather a concept referring to the Spring Boot Actuator module. It exposes operational endpoints that provide insights into a running 
+application's health, metrics, and other details. These endpoints are accessed via HTTP or JMX, allowing for monitoring and management.
+Spring Boot Actuator offers pre-built endpoints like /health, /metrics, /info, /env, /beans and more. These endpoints provide information about the application's status, performance, configuration, 
+and components. It's also possible to create custom endpoints to expose application-specific data. 
+Actuator is used for:
+Monitoring application health and performance.
+Gathering metrics for analysis and alerting.
+Inspecting application configuration and environment.
+Managing and interacting with the application at runtime.
+Auditing and logging application events.
+Integrating with external monitoring tools.
+To use Actuator, add the spring-boot-starter-actuator dependency to the project. Endpoints can be configured and secured through properties in application.properties or application.yml.
+
+9. Explain Set interface with Data Structure? 
+Answer: The Set interface in data structures represents a collection of unique elements, meaning it does not allow duplicate values. It is an abstract data type that defines a contract for 
+how sets should behave, without specifying the underlying implementation. Sets are commonly used for tasks like membership testing, removing duplicates, and performing mathematical set 
+operations such as union, intersection, and difference.
+Several data structures can implement the Set interface, each with its own performance characteristics:
+HashSet:
+Implemented using a hash table, HashSet provides fast average-case performance for insertion, deletion, and search operations, typically O(1). However, it does not guarantee any specific 
+order of elements.
+TreeSet:
+Implemented using a self-balancing binary search tree (e.g., a red-black tree), TreeSet maintains elements in a sorted order. Insertion, deletion, and search operations have a time 
+complexity of O(log n), where n is the number of elements in the set.
+LinkedHashSet:
+Implemented using a hash table and a linked list, LinkedHashSet maintains elements in the order they were inserted. It provides O(1) average-case performance for insertion, deletion, 
+and search operations, while also preserving insertion order.
+The choice of which Set implementation to use depends on the specific requirements of the application. If fast performance is the primary concern and order is not important, HashSet is 
+a good choice. If elements need to be kept sorted, TreeSet is appropriate. If insertion order needs to be preserved, LinkedHashSet is the way to go.
+
+10. What features has Java 8, 11, 17?
+Answer: Java 8: Introduced some of the most widely adopted features like Lambda and Stream APIs. 
+Java 11: Introduced improvements like the new HttpClient and removed tools like javaws . 
+Java 17: Enhanced APIs like RandomGenerator, Stream, and Optional. Sealed Classes and Record Types became permanent.
+Source: https://medium.com/@a.r.m.monesan_9577/java-8-vs-java-11-vs-java-17-vs-java-21-a-comprehensive-comparison-aa4635f9c3fe#:~:text=Java%208%3A%20Introduced%20some%20of,and%20Record%20Types%20became%20permanent.
+
+11. What is Abstraction in Java?
+Answer: Abstraction in Java is a core principle of object-oriented programming that focuses on simplifying complex systems by hiding unnecessary implementation details and exposing only 
+essential information. It allows programmers to interact with objects at a high level, concentrating on what an object does rather than how it achieves its functionality
+
+12. What is different between Spring Boot Application and Spring MVC?
+Answer: The core difference between Spring Boot and Spring MVC lies in their purpose and scope within the Spring ecosystem.
+Spring MVC:
+It is a web framework built on the Spring Framework, specifically designed to facilitate the development of web applications following the Model-View-Controller (MVC) architectural pattern. It provides the necessary 
+components and infrastructure for request handling, routing, view rendering, and data binding in a web environment.
+Spring Boot:
+It is a framework that simplifies the setup and configuration of Spring-based applications, including those using Spring MVC. It takes an opinionated approach, providing sensible defaults 
+and auto-configuration capabilities to reduce boilerplate code and accelerate the development process. Spring Boot can be used to create standalone, production-ready applications with minimal configuration.
+
+13. What is Ansible and AWS?
+Answer: Ansible is an open-source IT automation tool used for configuration management, application deployment, and orchestration, while AWS is a cloud computing platform providing a wide range of services. You can use 
+Ansible to automate tasks and manage resources within your AWS environmen

@@ -17,7 +17,13 @@ class Summation{
 		
 		int returnValue = 0; 
 		for(int i = 1; i<=num; i++) {
-			//returnValue = + i;
+			
+			/*unary operator which indicate explicitly the sign
+			 * of i become positive furthermore whatever i
+			 * positive or negative remain same returnValue 
+			 * positive or negative value
+			 */
+			//returnValue = + i;  
 			returnValue += i;
 		}
 		return returnValue;
@@ -66,6 +72,14 @@ class User {
 
 	double calPrice(List<Product> myProducts) {
 		double returnPrice = 0.0;
+		
+		/*
+		 * By Using Enhanced For Loop
+		 */
+		
+		//for(Product product: returnPrice){
+        //    returnPrice += product.price*product.disc;
+        //}
 		
 		for(int i = 0; i<myProducts.size();i++) {
 			returnPrice += myProducts.get(i).price*myProducts.get(i).dsc;
@@ -151,7 +165,8 @@ class Palindrome {
 			reverseWord.append(word.charAt(i));	
 		}
 		
-		return word.equals(reverseWord);
+		
+		return word.equals(reverseWord.toString());
 	}
 	
 	/* 
@@ -164,7 +179,7 @@ class Palindrome {
 		int reverseNumber = 0;
 		while(originalNumber>0) {
 			reverseNumber = reverseNumber*10 + originalNumber % 10;
-			originalNumber = originalNumber / 10;
+			originalNumber /= 10;
 		}
 		return number == reverseNumber;
 	}
@@ -186,7 +201,8 @@ class SonyPlayStation2025{
 		
 		System.out.println("cattac is Palindorm? " + new Palindrome().isPalindromStrOp1("cattac"));
 		System.out.println(121 + " is Palindorm? " + new Palindrome().isPalindromStrOp2(""+121));
-		System.out.println(121 + " is Palindorm? " + new Palindrome().isPalindromIntOp(121));;
+		System.out.println(121 + " is Palindorm? " + new Palindrome().isPalindromStrOp3(""+121));
+		System.out.println(121 + " is Palindorm? " + new Palindrome().isPalindromIntOp(121));
 	
 	}
 }
